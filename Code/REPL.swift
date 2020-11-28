@@ -21,11 +21,15 @@ final class REPL {
         process.standardInput = stdInput.fileHandleForReading
         process.standardOutput = stdOutput.fileHandleForWriting
         process.standardError = stdError.fileHandleForWriting
-
+        
+        var bufferedStdOutData = Data()
         stdOutputtoken = NotificationCenter.default.addObserver(forName: .NSFileHandleDataAvailable, object: stdOutput.fileHandleForReading, queue: nil) { [unowned self](code) in
-            let data = self.stdOutput.fileHandleForReading.availableData
-            let string = String(data: data, encoding: .utf8)!
-            onStdOut(string)
+            bufferedStdOutData.append(self.stdOutput.fileHandleForReading.availableData)
+
+            if let string = String(data: bufferedStdOutData, encoding: .utf8) , string.last?.isNewline == true {
+                onStdOut(string)
+                bufferedStdOutData.removeAll()
+            }
             self.stdOutput.fileHandleForReading.waitForDataInBackgroundAndNotify()
         }
         
