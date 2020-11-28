@@ -29,10 +29,10 @@ class ViewController: NSViewController {
     
 }
 
-
-
 extension ViewController: NSTextViewDelegate {
     func textViewDidChangeSelection(_ notification: Notification) {
-        
+        // Updates the contentString property of the Code instance with the text view's text
+        (representedObject as? Code)?.contentString = editorTextView.string
+
     }
 }
