@@ -11,20 +11,28 @@ class ViewController: NSViewController {
     
     @IBOutlet weak var editorTextView: NSTextView!
     @IBOutlet weak var outputTextView: NSTextView!
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+        editorTextView.delegate = self
         editorTextView.font = NSFont.monospacedSystemFont(ofSize: 14.0, weight: .regular)
         outputTextView.font = NSFont.monospacedSystemFont(ofSize: 14.0, weight: .regular)
     }
-
+    
     override var representedObject: Any? {
         didSet {
-        // Update the view, if already loaded.
+            // Update the view, if already loaded.
         }
     }
-
-
+    
+    
 }
 
+
+
+extension ViewController: NSTextViewDelegate {
+    func textViewDidChangeSelection(_ notification: Notification) {
+        
+    }
+}
