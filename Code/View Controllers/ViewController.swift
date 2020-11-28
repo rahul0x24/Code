@@ -12,6 +12,7 @@ class ViewController: NSViewController, SyntaxTextViewDelegate {
     @IBOutlet weak var editorTextView: SyntaxTextView!
     @IBOutlet weak var outputTextView: NSTextView!
     
+    let repl = REPL()
     var lexer = SwiftLexer()
 
     override func viewDidLoad() {
@@ -44,6 +45,10 @@ class ViewController: NSViewController, SyntaxTextViewDelegate {
     
     func lexerForSource(_ source: String) -> Lexer {
         return lexer
+    }
+    
+    @IBAction func doRunCode(_ sender: Any) {
+        repl.execute(editorTextView.text)
     }
 }
 

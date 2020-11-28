@@ -344,7 +344,7 @@
                                     <items>
                                         <menuItem title="Run" keyEquivalent="R" id="snW-S8-Cw5" userLabel="Run">
                                             <connections>
-                                                <action selector="toggleToolbarShown:" target="Ady-hI-5gd" id="BXY-wc-z0C"/>
+                                                <action selector="doRunCode:" target="Ady-hI-5gd" id="0i2-n2-6HV"/>
                                             </connections>
                                         </menuItem>
                                     </items>
