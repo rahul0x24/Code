@@ -12,12 +12,18 @@ class ViewController: NSViewController, SyntaxTextViewDelegate {
     @IBOutlet weak var editorTextView: SyntaxTextView!
     @IBOutlet weak var outputTextView: NSTextView!
     
-    let repl = REPL()
+    var repl: REPL!
     var lexer = SwiftLexer()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        // Adds text being processed by the REPL to the outputTextView
+        repl = REPL(onStdOut: {[unowned outputTextView] (text) in
+            outputTextView?.textStorage?.append(NSAttributedString(string: text, attributes: [.foregroundColor : NSColor.textColor]))
+        }, onStdErr: { [unowned outputTextView](text) in
+            outputTextView?.textStorage?.append(NSAttributedString(string: text, attributes: [.foregroundColor : NSColor.red]))
+        })
     }
 
     override func viewWillAppear() {
