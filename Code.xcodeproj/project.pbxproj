@@ -23,6 +23,7 @@
 		42AA53412571F2C70015712C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		42AA53422571F2C70015712C /* Code.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Code.entitlements; sourceTree = "<group>"; };
 		42AA534925726A750015712C /* Document.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Document.swift; sourceTree = "<group>"; };
+		42AA534C25726B2D0015712C /* CodeDebug.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CodeDebug.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +56,7 @@
 		42AA53372571F2C60015712C /* Code */ = {
 			isa = PBXGroup;
 			children = (
+				42AA534C25726B2D0015712C /* CodeDebug.entitlements */,
 				42AA53382571F2C60015712C /* AppDelegate.swift */,
 				42AA533A2571F2C70015712C /* ViewController.swift */,
 				42AA533C2571F2C70015712C /* Assets.xcassets */,
@@ -275,7 +277,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = Code/Code.entitlements;
+				CODE_SIGN_ENTITLEMENTS = Code/CodeDebug.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = T22WQ5292J;
