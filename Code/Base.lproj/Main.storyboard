@@ -711,23 +711,23 @@
                         <rect key="frame" x="0.0" y="0.0" width="800" height="600"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <splitView dividerStyle="paneSplitter" vertical="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oIb-gT-Z16">
+                            <splitView dividerStyle="thin" vertical="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oIb-gT-Z16">
                                 <rect key="frame" x="0.0" y="0.0" width="800" height="600"/>
                                 <subviews>
-                                    <scrollView borderType="none" autohidesScrollers="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" id="k1h-IQ-IA6">
-                                        <rect key="frame" x="0.0" y="0.0" width="526" height="600"/>
+                                    <scrollView misplaced="YES" borderType="none" autohidesScrollers="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" id="k1h-IQ-IA6">
+                                        <rect key="frame" x="0.0" y="0.0" width="400" height="600"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <clipView key="contentView" drawsBackground="NO" copiesOnScroll="NO" id="S4e-5o-IGf">
-                                            <rect key="frame" x="0.0" y="0.0" width="526" height="600"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="400" height="600"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <subviews>
-                                                <textView importsGraphics="NO" richText="NO" verticallyResizable="YES" allowsUndo="YES" spellingCorrection="YES" smartInsertDelete="YES" id="yVx-6c-Ze5">
-                                                    <rect key="frame" x="0.0" y="0.0" width="526" height="600"/>
+                                                <textView importsGraphics="NO" richText="NO" verticallyResizable="YES" allowsUndo="YES" spellingCorrection="YES" smartInsertDelete="YES" id="yVx-6c-Ze5" customClass="SyntaxTextView" customModule="Sourceful">
+                                                    <rect key="frame" x="0.0" y="0.0" width="400" height="600"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                     <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                                    <size key="minSize" width="526" height="600"/>
-                                                    <size key="maxSize" width="600" height="600"/>
+                                                    <size key="minSize" width="400" height="600"/>
+                                                    <size key="maxSize" width="800" height="600"/>
                                                     <color key="insertionPointColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                                 </textView>
                                             </subviews>
@@ -746,19 +746,19 @@
                                         </scroller>
                                     </scrollView>
                                     <scrollView fixedFrame="YES" borderType="none" autohidesScrollers="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" id="LLf-CC-afo">
-                                        <rect key="frame" x="536" y="0.0" width="264" height="600"/>
+                                        <rect key="frame" x="401" y="0.0" width="399" height="600"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <clipView key="contentView" drawsBackground="NO" copiesOnScroll="NO" id="Lwm-NM-65W">
-                                            <rect key="frame" x="0.0" y="0.0" width="264" height="600"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="399" height="600"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <subviews>
                                                 <textView editable="NO" importsGraphics="NO" richText="NO" verticallyResizable="YES" spellingCorrection="YES" smartInsertDelete="YES" id="z7z-B2-U04">
-                                                    <rect key="frame" x="0.0" y="0.0" width="239" height="600"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="374" height="600"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                     <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                                    <size key="minSize" width="239" height="600"/>
-                                                    <size key="maxSize" width="544" height="10000000"/>
+                                                    <size key="minSize" width="374" height="600"/>
+                                                    <size key="maxSize" width="800" height="10000000"/>
                                                     <color key="insertionPointColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                                 </textView>
                                             </subviews>

@@ -3,19 +3,24 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4218EC34257291C700007EF4 /* LightSourceCodeTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4218EC33257291C700007EF4 /* LightSourceCodeTheme.swift */; };
+		4218EC382572971100007EF4 /* DarkSourceCodeTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4218EC372572971100007EF4 /* DarkSourceCodeTheme.swift */; };
 		42AA53392571F2C60015712C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42AA53382571F2C60015712C /* AppDelegate.swift */; };
 		42AA533B2571F2C70015712C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42AA533A2571F2C70015712C /* ViewController.swift */; };
 		42AA533D2571F2C70015712C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 42AA533C2571F2C70015712C /* Assets.xcassets */; };
 		42AA53402571F2C70015712C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 42AA533E2571F2C70015712C /* Main.storyboard */; };
 		42AA534A25726A750015712C /* Document.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42AA534925726A750015712C /* Document.swift */; };
 		42AA53522572739E0015712C /* Code.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42AA53512572739E0015712C /* Code.swift */; };
+		42AA535A257287580015712C /* Sourceful in Frameworks */ = {isa = PBXBuildFile; productRef = 42AA5359257287580015712C /* Sourceful */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4218EC33257291C700007EF4 /* LightSourceCodeTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LightSourceCodeTheme.swift; sourceTree = "<group>"; };
+		4218EC372572971100007EF4 /* DarkSourceCodeTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DarkSourceCodeTheme.swift; sourceTree = "<group>"; };
 		42AA53352571F2C60015712C /* Code.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Code.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		42AA53382571F2C60015712C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		42AA533A2571F2C70015712C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -33,12 +38,22 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				42AA535A257287580015712C /* Sourceful in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4218EC32257291B000007EF4 /* Themes */ = {
+			isa = PBXGroup;
+			children = (
+				4218EC33257291C700007EF4 /* LightSourceCodeTheme.swift */,
+				4218EC372572971100007EF4 /* DarkSourceCodeTheme.swift */,
+			);
+			path = Themes;
+			sourceTree = "<group>";
+		};
 		42AA532C2571F2C60015712C = {
 			isa = PBXGroup;
 			children = (
@@ -58,9 +73,10 @@
 		42AA53372571F2C60015712C /* Code */ = {
 			isa = PBXGroup;
 			children = (
+				4218EC32257291B000007EF4 /* Themes */,
 				42AA5350257273800015712C /* Models */,
+				42AA5357257281530015712C /* View Controllers */,
 				42AA534F257273600015712C /* Resources */,
-				42AA533A2571F2C70015712C /* ViewController.swift */,
 			);
 			path = Code;
 			sourceTree = "<group>";
@@ -87,6 +103,14 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		42AA5357257281530015712C /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				42AA533A2571F2C70015712C /* ViewController.swift */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -103,6 +127,9 @@
 			dependencies = (
 			);
 			name = Code;
+			packageProductDependencies = (
+				42AA5359257287580015712C /* Sourceful */,
+			);
 			productName = Code;
 			productReference = 42AA53352571F2C60015712C /* Code.app */;
 			productType = "com.apple.product-type.application";
@@ -130,6 +157,9 @@
 				Base,
 			);
 			mainGroup = 42AA532C2571F2C60015712C;
+			packageReferences = (
+				42AA5358257287580015712C /* XCRemoteSwiftPackageReference "Sourceful" */,
+			);
 			productRefGroup = 42AA53362571F2C60015712C /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -157,7 +187,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				42AA53522572739E0015712C /* Code.swift in Sources */,
+				4218EC34257291C700007EF4 /* LightSourceCodeTheme.swift in Sources */,
 				42AA533B2571F2C70015712C /* ViewController.swift in Sources */,
+				4218EC382572971100007EF4 /* DarkSourceCodeTheme.swift in Sources */,
 				42AA53392571F2C60015712C /* AppDelegate.swift in Sources */,
 				42AA534A25726A750015712C /* Document.swift in Sources */,
 			);
@@ -356,6 +388,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		42AA5358257287580015712C /* XCRemoteSwiftPackageReference "Sourceful" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/twostraws/Sourceful.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.3.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		42AA5359257287580015712C /* Sourceful */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 42AA5358257287580015712C /* XCRemoteSwiftPackageReference "Sourceful" */;
+			productName = Sourceful;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 42AA532D2571F2C60015712C /* Project object */;
 }
