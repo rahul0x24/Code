@@ -8,14 +8,25 @@
 import Cocoa
 
 class Document: NSDocument {
+    /// Represents the document's content.
+    var content = Code()
+    var contentViewController: ViewController!
 
-    /*
-    override var windowNibName: String? {
-        // Override returning the nib file name of the document
-        // If you need to use a subclass of NSWindowController or if your document supports multiple NSWindowControllers, you should remove this method and override -makeWindowControllers instead.
-        return "Document"
+    override func makeWindowControllers() {
+        // Returns the storyboard that contains your document window.
+        let storyboard = NSStoryboard(name: NSStoryboard.Name("Main"), bundle: nil)
+        if let windowController =
+            storyboard.instantiateController(
+                withIdentifier: NSStoryboard.SceneIdentifier("Document Window Controller")) as? NSWindowController {
+            addWindowController(windowController)
+            
+            // Set the view controller's represented object as your document.
+            if let contentVC = windowController.contentViewController as? ViewController {
+                contentVC.representedObject = content
+                contentViewController = contentVC
+            }
+        }
     }
-    */
 
     override func windowControllerDidLoadNib(_ aController: NSWindowController) {
         super.windowControllerDidLoadNib(aController)
