@@ -11,6 +11,8 @@
 		42AA533B2571F2C70015712C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42AA533A2571F2C70015712C /* ViewController.swift */; };
 		42AA533D2571F2C70015712C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 42AA533C2571F2C70015712C /* Assets.xcassets */; };
 		42AA53402571F2C70015712C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 42AA533E2571F2C70015712C /* Main.storyboard */; };
+		42AA534A25726A750015712C /* Document.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42AA534925726A750015712C /* Document.swift */; };
+		42AA53522572739E0015712C /* Code.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42AA53512572739E0015712C /* Code.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,6 +23,9 @@
 		42AA533F2571F2C70015712C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		42AA53412571F2C70015712C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		42AA53422571F2C70015712C /* Code.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Code.entitlements; sourceTree = "<group>"; };
+		42AA534925726A750015712C /* Document.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Document.swift; sourceTree = "<group>"; };
+		42AA534C25726B2D0015712C /* CodeDebug.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CodeDebug.entitlements; sourceTree = "<group>"; };
+		42AA53512572739E0015712C /* Code.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Code.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,14 +58,33 @@
 		42AA53372571F2C60015712C /* Code */ = {
 			isa = PBXGroup;
 			children = (
-				42AA53382571F2C60015712C /* AppDelegate.swift */,
+				42AA5350257273800015712C /* Models */,
+				42AA534F257273600015712C /* Resources */,
 				42AA533A2571F2C70015712C /* ViewController.swift */,
-				42AA533C2571F2C70015712C /* Assets.xcassets */,
-				42AA533E2571F2C70015712C /* Main.storyboard */,
-				42AA53412571F2C70015712C /* Info.plist */,
-				42AA53422571F2C70015712C /* Code.entitlements */,
 			);
 			path = Code;
+			sourceTree = "<group>";
+		};
+		42AA534F257273600015712C /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				42AA53382571F2C60015712C /* AppDelegate.swift */,
+				42AA533C2571F2C70015712C /* Assets.xcassets */,
+				42AA534C25726B2D0015712C /* CodeDebug.entitlements */,
+				42AA53422571F2C70015712C /* Code.entitlements */,
+				42AA53412571F2C70015712C /* Info.plist */,
+				42AA533E2571F2C70015712C /* Main.storyboard */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		42AA5350257273800015712C /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				42AA534925726A750015712C /* Document.swift */,
+				42AA53512572739E0015712C /* Code.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -132,8 +156,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				42AA53522572739E0015712C /* Code.swift in Sources */,
 				42AA533B2571F2C70015712C /* ViewController.swift in Sources */,
 				42AA53392571F2C60015712C /* AppDelegate.swift in Sources */,
+				42AA534A25726A750015712C /* Document.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -271,7 +297,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = Code/Code.entitlements;
+				CODE_SIGN_ENTITLEMENTS = Code/CodeDebug.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = T22WQ5292J;
