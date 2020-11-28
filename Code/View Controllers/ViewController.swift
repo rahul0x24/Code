@@ -23,7 +23,7 @@ class ViewController: NSViewController, SyntaxTextViewDelegate {
         handleOpenDocumentOperation()
         
         editorTextView.delegate = self
-        editorTextView.theme = DefaultSourceCodeTheme()
+        editorTextView.theme = DarkSourceCodeTheme()
         outputTextView.backgroundColor = #colorLiteral(red: 0.1199501231, green: 0.1244357154, blue: 0.1592445076, alpha: 1)
         outputTextView.textColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
     }
