@@ -8,6 +8,9 @@
 import Cocoa
 
 class ViewController: NSViewController {
+    
+    @IBOutlet weak var editorTextView: NSTextView!
+    @IBOutlet weak var outputTextView: NSTextView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
