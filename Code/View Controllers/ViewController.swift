@@ -54,7 +54,7 @@ class ViewController: NSViewController, SyntaxTextViewDelegate {
     }
     
     @IBAction func doRunCode(_ sender: Any) {
-        repl.execute(editorTextView.text)
+        repl.execute(editorTextView.text + "\r\n")
     }
 }
 
