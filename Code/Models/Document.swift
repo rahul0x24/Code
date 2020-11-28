@@ -11,6 +11,8 @@ class Document: NSDocument {
     /// Represents the document's content.
     var content = Code()
     var contentViewController: ViewController!
+    var didReadData = false
+
 
     override func makeWindowControllers() {
         // Returns the storyboard that contains your document window.
@@ -28,20 +30,19 @@ class Document: NSDocument {
         }
     }
 
-    override func windowControllerDidLoadNib(_ aController: NSWindowController) {
-        super.windowControllerDidLoadNib(aController)
-        // Add any code here that needs to be executed once the windowController has loaded the document's window.
-    }
-
     override func data(ofType typeName: String) throws -> Data {
-        // Insert code here to write your document to data of the specified type, throwing an error in case of failure.
-        // Alternatively, you could remove this method and override fileWrapper(ofType:), write(to:ofType:), or write(to:ofType:for:originalContentsURL:) instead.
+        if let codeData = content.getCodeText() {
+            return codeData
+        }
         throw NSError(domain: NSOSStatusErrorDomain, code: unimpErr, userInfo: nil)
     }
-    
+
     override func read(from data: Data, ofType typeName: String) throws {
-        // Insert code here to read your document from the given data of the specified type, throwing an error in case of failure.
-        // Alternatively, you could remove this method and override read(from:ofType:) instead.  If you do, you should also override isEntireFileLoaded to return false if the contents are lazily loaded.
+        if content.use(data: data) {
+            // Make didReadData flag true to indicate that data has been read from a file!
+            didReadData = true
+            return
+        }
         throw NSError(domain: NSOSStatusErrorDomain, code: unimpErr, userInfo: nil)
     }
 

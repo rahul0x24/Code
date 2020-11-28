@@ -9,21 +9,22 @@ import Foundation
 
 class Code: Codable {
     var contentString = ""
-    
-    /// Encodes and instance of Code as a JSON object
-    /// - Returns: Encoded data
-    func getCodeAsJSON() -> Data? {
-        let encoder = JSONEncoder()
-        return try? encoder.encode(self)
-    }
-    
-    /// Decodes JSON object
+
+    /// Creates a string object from data
     /// - Parameter data: data
-    /// - Returns: boolean value
+    /// - Returns: boolean value if data is decoded
     func use(data: Data) -> Bool {
-        let decoder = JSONDecoder()
-        guard let decoded = try? decoder.decode(Code.self, from: data) else { return false }
-        contentString = decoded.contentString
+        // Try to create a String object using it.
+        guard let text = String(data: data, encoding: .utf8) else { return false }
+        
+        // Data was converted to a string successfully!
+        contentString = text
         return true
+    }
+
+    /// Gets the text of the Code object
+    /// - Returns: Data of contentString, encoded using utf8
+    func getCodeText() -> Data? {
+        return contentString.data(using: .utf8)
     }
 }
