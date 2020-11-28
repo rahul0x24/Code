@@ -14,8 +14,9 @@ class ViewController: NSViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
+        editorTextView.font = NSFont.monospacedSystemFont(ofSize: 14.0, weight: .regular)
+        outputTextView.font = NSFont.monospacedSystemFont(ofSize: 14.0, weight: .regular)
     }
 
     override var representedObject: Any? {
