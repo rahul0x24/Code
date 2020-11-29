@@ -12,7 +12,8 @@ final class REPL {
     private let stdInput = Pipe()
     private let stdError = Pipe()
     private let stdOutput = Pipe()
-    
+    private let userDefaults = UserDefaults.standard
+
     private var stdOutputtoken: Any?
     private var stdErrorToken: Any?
     
@@ -36,16 +37,17 @@ final class REPL {
         stdErrorToken = NotificationCenter.default.addObserver(forName: .NSFileHandleDataAvailable, object: stdError.fileHandleForReading, queue: nil) { [unowned self](code) in
             let data = self.stdError.fileHandleForReading.availableData
             let string = String(data: data, encoding: .utf8)!
+            userDefaults.setValue("Code | Failure", forKey: "Label")
             onStdErr(string)
             self.stdError.fileHandleForReading.waitForDataInBackgroundAndNotify()
         }
-        
         process.launch()
         stdOutput.fileHandleForReading.waitForDataInBackgroundAndNotify()
         stdError.fileHandleForReading.waitForDataInBackgroundAndNotify()
     }
     
     func execute(_ code: String) {
+        userDefaults.setValue("Code | Success", forKey: "Label")
         stdInput.fileHandleForWriting.write(code.data(using: .utf8)!)
     }
 }

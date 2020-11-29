@@ -10,10 +10,23 @@ import Cocoa
 class WindowController: NSWindowController, NSWindowDelegate {
     
     @IBOutlet var codeToolBarItemTextField: NSTextField!
-    let codeToolBarItemStringValue = "Code |"
+    var udObservation: NSKeyValueObservation?
+
     override func windowDidLoad() {
         super.windowDidLoad()
-        codeToolBarItemTextField.stringValue = codeToolBarItemStringValue
+
+        codeToolBarItemTextField.stringValue = "test"
+        let ud = UserDefaults.standard
+
+        codeToolBarItemTextField.stringValue = String(ud.string(forKey: "Label")!)
+        udObservation = ud.observe(\.Label, options: .new, changeHandler: { (ud, change) in
+            if let newValue = change.newValue {
+                self.codeToolBarItemTextField.stringValue = String(newValue)
+            }
+        })
+        codeToolBarItemTextField.stringValue = UserDefaults.standard.string(forKey: "Label") ?? "test"
+
+        ud.setValue("Code |", forKey: "Label")
     }
     
     required init?(coder aDecoder: NSCoder) {

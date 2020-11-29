@@ -8,12 +8,13 @@ import Sourceful
 import Cocoa
 
 class ViewController: NSViewController, SyntaxTextViewDelegate {
-
+    
     @IBOutlet weak var editorTextView: SyntaxTextView!
     @IBOutlet weak var outputTextView: NSTextView!
     
     var repl: REPL!
     var lexer = SwiftLexer()
+    let userDefaults = UserDefaults.standard
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -58,10 +59,15 @@ class ViewController: NSViewController, SyntaxTextViewDelegate {
         let code = editorTextView.text
         let selectedCode = editorTextView.contentTextView.selectedText
         
+        userDefaults.setValue("Code | Running...", forKey: "Label")
         if selectedCode != "" {
             repl.execute(selectedCode + "\r\n")
         } else {
             repl.execute(code + "\r\n")
+        }
+
+        if editorTextView.text == "" {
+            userDefaults.setValue("Code |", forKey: "Label")
         }
     }
 }
