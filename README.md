@@ -1,6 +1,6 @@
 # Code
 
-Code is a demo Swift code editor that allows users to enter a script, execute it, and see its output side-by-side. Users can open saves Swift files or execute code directly from the editor.
+Code is a demo Swift code editor that allows users to enter a script, execute it, and see its output side-by-side. Users can open and save Swift files or execute code directly from the editor.
 
 ![Nov-29-2020 16-34-49](https://user-images.githubusercontent.com/54906829/100554199-13c7a680-3261-11eb-9b43-e4fc81fb6337.gif)
 
