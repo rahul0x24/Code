@@ -25,6 +25,7 @@ class ViewController: NSViewController, SyntaxTextViewDelegate {
         }, onStdErr: { [unowned outputTextView](text) in
             outputTextView?.textStorage?.append(NSAttributedString(string: text, attributes: [.foregroundColor : NSColor.red]))
         })
+            userDefaults.setValue("Code |", forKey: "Label")
     }
 
     override func viewWillAppear() {
@@ -59,7 +60,6 @@ class ViewController: NSViewController, SyntaxTextViewDelegate {
         let code = editorTextView.text
         let selectedCode = editorTextView.contentTextView.selectedText
         
-        userDefaults.setValue("Code | Running...", forKey: "Label")
         if selectedCode != "" {
             repl.execute(selectedCode + "\r\n")
         } else {
