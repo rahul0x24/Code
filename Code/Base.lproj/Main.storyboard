@@ -397,6 +397,35 @@
                         <rect key="contentRect" x="196" y="240" width="800" height="600"/>
                         <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
                         <value key="minSize" type="size" width="800" height="600"/>
+                        <toolbar key="toolbar" implicitIdentifier="67AAD621-7AE9-40AD-B38A-E4CFCC0B69C3" autosavesConfiguration="NO" displayMode="iconOnly" sizeMode="regular" id="T15-EG-dcR">
+                            <allowedToolbarItems>
+                                <toolbarItem implicitItemIdentifier="NSToolbarShowColorsItem" id="iJX-6Y-qUF"/>
+                                <toolbarItem implicitItemIdentifier="NSToolbarShowFontsItem" id="P2M-78-dUe"/>
+                                <toolbarItem implicitItemIdentifier="NSToolbarPrintItem" id="X5T-Jl-FHw"/>
+                                <toolbarItem implicitItemIdentifier="NSToolbarSpaceItem" id="kgI-xC-G3H"/>
+                                <toolbarItem implicitItemIdentifier="NSToolbarFlexibleSpaceItem" id="JqN-KB-ag4"/>
+                                <toolbarItem implicitItemIdentifier="29D8E78F-F1F0-43EE-9ABF-35A72BCCDBD2" label="Run" paletteLabel="Custom View" tag="1" image="NSTouchBarPlayTemplate" id="u9f-1M-1lT" userLabel="Run">
+                                    <nil key="toolTip"/>
+                                    <size key="minSize" width="45" height="24"/>
+                                    <size key="maxSize" width="45" height="45"/>
+                                    <button key="view" verticalHuggingPriority="750" tag="1" id="qO3-Ec-LlW">
+                                        <rect key="frame" x="16" y="14" width="45" height="24"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <buttonCell key="cell" type="roundTextured" bezelStyle="texturedRounded" image="NSTouchBarPlayTemplate" imagePosition="only" alignment="center" borderStyle="border" inset="2" id="SSE-Zq-q8f">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                            <font key="font" metaFont="system"/>
+                                        </buttonCell>
+                                    </button>
+                                    <connections>
+                                        <action selector="doRunCode:" target="Oky-zY-oP4" id="1ez-Fg-czE"/>
+                                    </connections>
+                                </toolbarItem>
+                            </allowedToolbarItems>
+                            <defaultToolbarItems>
+                                <toolbarItem reference="JqN-KB-ag4"/>
+                                <toolbarItem reference="u9f-1M-1lT"/>
+                            </defaultToolbarItems>
+                        </toolbar>
                         <connections>
                             <outlet property="delegate" destination="B8D-0N-5wS" id="98r-iN-zZc"/>
                         </connections>
@@ -502,4 +531,7 @@
             <point key="canvasLocation" x="75" y="968"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="NSTouchBarPlayTemplate" width="14" height="30"/>
+    </resources>
 </document>
