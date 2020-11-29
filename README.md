@@ -19,6 +19,6 @@ Open ```Code.xcodeproj```
 ## Requirements
 Code was tested with the following:
 
-* macOS 10.5 or higher
+* macOS 10.15 or higher
 * Xcode 12.x
 * Swift 5.3
