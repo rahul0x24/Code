@@ -55,7 +55,14 @@ class ViewController: NSViewController, SyntaxTextViewDelegate {
     
     @IBAction func doRunCode(_ sender: Any) {
         outputTextView.string = ""
-        repl.execute(editorTextView.text + "\r\n")
+        let code = editorTextView.text
+        let selectedCode = editorTextView.contentTextView.selectedText
+        
+        if selectedCode != "" {
+            repl.execute(selectedCode + "\r\n")
+        } else {
+            repl.execute(code + "\r\n")
+        }
     }
 }
 
