@@ -21,4 +21,5 @@ Code was tested with the following:
 
 * macOS 10.15 or higher
 * Xcode 12.x
+* AppCode 2020.2.8
 * Swift 5.3
