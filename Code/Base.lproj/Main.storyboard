@@ -390,7 +390,7 @@
         <!--Window Controller-->
         <scene sceneID="R2V-B0-nI4">
             <objects>
-                <windowController storyboardIdentifier="Document Window Controller" id="B8D-0N-5wS" sceneMemberID="viewController">
+                <windowController storyboardIdentifier="Document Window Controller" id="B8D-0N-5wS" customClass="WindowController" customModule="Code" customModuleProvider="target" sceneMemberID="viewController">
                     <window key="window" title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" animationBehavior="default" titlebarAppearsTransparent="YES" titleVisibility="hidden" id="IQv-IB-iLA">
                         <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
@@ -420,8 +420,24 @@
                                         <action selector="doRunCode:" target="Oky-zY-oP4" id="1ez-Fg-czE"/>
                                     </connections>
                                 </toolbarItem>
+                                <toolbarItem implicitItemIdentifier="816C7945-3249-49C7-908E-A9842976FC6E" label="Custom View" paletteLabel="Custom View" id="vC1-aJ-Rpu">
+                                    <nil key="toolTip"/>
+                                    <size key="minSize" width="400" height="16"/>
+                                    <size key="maxSize" width="500" height="16"/>
+                                    <textField key="view" horizontalHuggingPriority="251" verticalHuggingPriority="750" id="s01-bO-cCG">
+                                        <rect key="frame" x="0.0" y="14" width="402" height="16"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <textFieldCell key="cell" lineBreakMode="clipping" borderStyle="bezel" alignment="left" title="Code |" bezelStyle="round" id="FfN-V0-iLn">
+                                            <font key="font" metaFont="system"/>
+                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" red="0.39604109529999998" green="0.39610227939999998" blue="0.39602768420000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </textFieldCell>
+                                    </textField>
+                                </toolbarItem>
                             </allowedToolbarItems>
                             <defaultToolbarItems>
+                                <toolbarItem reference="JqN-KB-ag4"/>
+                                <toolbarItem reference="vC1-aJ-Rpu"/>
                                 <toolbarItem reference="JqN-KB-ag4"/>
                                 <toolbarItem reference="u9f-1M-1lT"/>
                             </defaultToolbarItems>
@@ -431,6 +447,7 @@
                         </connections>
                     </window>
                     <connections>
+                        <outlet property="codeToolBarItemTextField" destination="s01-bO-cCG" id="MUp-eT-rsK"/>
                         <segue destination="XfG-lQ-9wD" kind="relationship" relationship="window.shadowedContentViewController" id="cq2-FE-JQM"/>
                     </connections>
                 </windowController>
