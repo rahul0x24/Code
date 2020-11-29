@@ -62,13 +62,14 @@
 			path = Themes;
 			sourceTree = "<group>";
 		};
-		4218EC5D2573B0EC00007EF4 /* Extensions */ = {
+		4218EC5D2573B0EC00007EF4 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				4218EC5425739A6400007EF4 /* Extension+NSTextView.swift */,
 				4218EC672573E31E00007EF4 /* UserDefaults.swift */,
+				4218EC3A2572C1C300007EF4 /* REPL.swift */,
+				4218EC5425739A6400007EF4 /* Extension+NSTextView.swift */,
 			);
-			path = Extensions;
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 		42AA532C2571F2C60015712C = {
@@ -90,8 +91,7 @@
 		42AA53372571F2C60015712C /* Code */ = {
 			isa = PBXGroup;
 			children = (
-				4218EC5D2573B0EC00007EF4 /* Extensions */,
-				4218EC3A2572C1C300007EF4 /* REPL.swift */,
+				4218EC5D2573B0EC00007EF4 /* Helpers */,
 				4218EC32257291B000007EF4 /* Themes */,
 				42AA5350257273800015712C /* Models */,
 				42AA5357257281530015712C /* Controllers */,
